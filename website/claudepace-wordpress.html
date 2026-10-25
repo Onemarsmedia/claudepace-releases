@@ -180,6 +180,24 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .hero .lead { font-size: 18px; }
   .cta .btn { width: 100%; justify-content: center; }
 }
+.get-dialog { border: 1px solid var(--line); border-radius: 20px; padding: 0; width: min(440px, calc(100vw - 32px));
+  background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.get-dialog::backdrop { background: rgba(5, 8, 4, .55); backdrop-filter: blur(3px); }
+.get-dialog form { display: grid; gap: 12px; padding: 28px; }
+.get-dialog h3 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; margin: 0; }
+.get-dialog .sub { color: var(--muted); font-size: 15px; margin: -4px 0 4px; }
+.get-dialog .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.get-dialog input[type=text], .get-dialog input[type=email] { width: 100%; font: inherit; font-size: 16px; padding: 11px 13px;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.get-dialog input:focus { outline: 2px solid var(--lime-ink); outline-offset: 1px; }
+.get-dialog label.check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.4; color: var(--ink); }
+.get-dialog label.check input { margin-top: 2px; width: 17px; height: 17px; accent-color: var(--lime); flex: none; }
+.get-dialog label.check a { text-decoration: underline; }
+.get-dialog .fine { font-size: 12.5px; color: var(--muted); margin: 0; }
+.get-dialog .close { position: absolute; top: 14px; right: 16px; border: 0; background: none; color: var(--muted); font-size: 22px; cursor: pointer; }
+.get-dialog .hp { position: absolute; left: -9999px; }
+.get-dialog button[type=submit] { justify-content: center; border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+.get-dialog .err { color: var(--red); font-size: 14px; margin: 0; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 <div class="cp-page">
@@ -195,7 +213,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#screens">Screens</a>
       <a href="#privacy">Privacy</a>
       <a href="#pricing">Pricing</a>
-      <a class="btn btn-primary btn-sm" href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip">Download</a>
+      <a class="btn btn-primary btn-sm" data-get href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip">Download</a>
     </div>
   </div>
 </nav>
@@ -207,7 +225,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <h1>Know when your Claude limit runs out. <em>Before it does.</em></h1>
       <p class="lead">ClaudePace sits in your menu bar, reads your real usage and forecasts when your session and weekly limits will hit 100% — with plain advice to make them last.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip">
+        <a class="btn btn-primary" data-get href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
           Download for macOS
         </a>
@@ -370,7 +388,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div>
       <h2>Your login never leaves your Mac.</h2>
       <ul class="checks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>No account, no sign-up, no email.</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>No account inside the app — it never sends your data anywhere.</span></li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>No analytics, no tracking, no cloud sync.</span></li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Uses the Claude Code login already in your macOS Keychain — no browser cookies, no copied session keys.</span></li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Checking usage doesn't use any of your limit.</span></li>
@@ -422,7 +440,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <li>Global shortcut (⌃⌥P), English &amp; Polish</li>
           <li>Usage history and charts (free during the preview)</li>
         </ul>
-        <a class="btn btn-primary" href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip" style="justify-content:center">Download free</a>
+        <a class="btn btn-primary" data-get href="https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip" style="justify-content:center">Download free</a>
       </div>
       <div class="plan pro">
         <span class="badge">Coming soon</span>
@@ -466,6 +484,54 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   </div>
 </section>
 
+<dialog class="get-dialog" id="get" aria-labelledby="get-title">
+  <form id="get-form" novalidate>
+    <button type="button" class="close" aria-label="Close" data-close>&times;</button>
+    <h3 id="get-title">Get ClaudePace — free</h3>
+    <p class="sub">Tell us who you are and the download starts right away.</p>
+    <div class="row">
+      <input type="text" name="first" placeholder="First name" autocomplete="given-name" required maxlength="100">
+      <input type="text" name="last" placeholder="Last name" autocomplete="family-name" required maxlength="100">
+    </div>
+    <input type="email" name="email" placeholder="Email" autocomplete="email" required maxlength="200">
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="check"><input type="checkbox" name="terms" value="yes" required><span>I agree to the <a href="https://onemarsmedia.com/privacy-policy/#claudepace" target="_blank" rel="noopener">terms and privacy policy</a>.</span></label>
+    <label class="check"><input type="checkbox" name="news" value="yes"><span>Email me about ClaudePace updates and new tools from One Mars Media. Unsubscribe any time.</span></label>
+    <p class="err" id="get-err" hidden>Please fill in your name and a valid email, and accept the terms.</p>
+    <button type="submit" class="btn btn-primary">Download for macOS</button>
+    <p class="fine">We keep your name and email to know who uses ClaudePace. The app itself never sends your data anywhere.</p>
+  </form>
+</dialog>
+<script>
+(() => {
+  // Download form: name + email go to a private Google Sheet (scripts/signup-apps-script.js), then the ZIP downloads.
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbzW0_PRb-a7W14NuTvvcPf0xc9rOVEtrnHX5Tij-HUDGqsng1PvuJ6nmh7MRuX8eXvB/exec";
+  const ZIP = "https://github.com/Onemarsmedia/claudepace-releases/releases/latest/download/ClaudePace.zip";
+  const dlg = document.getElementById("get"), form = document.getElementById("get-form"), err = document.getElementById("get-err");
+  let signed = false;
+  try { signed = localStorage.getItem("cp-signed") === "1"; } catch (e) {}
+  document.querySelectorAll("a[data-get]").forEach(a => a.addEventListener("click", ev => {
+    if (signed || !dlg.showModal) return;  // returning visitor or no <dialog> support: plain download
+    ev.preventDefault();
+    dlg.showModal();
+  }));
+  dlg.querySelector("[data-close]").addEventListener("click", () => dlg.close());
+  form.addEventListener("submit", ev => {
+    ev.preventDefault();
+    const f = new FormData(form);
+    const ok = f.get("first").trim() && f.get("last").trim() && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.get("email").trim()) && f.get("terms");
+    err.hidden = !!ok;
+    if (!ok) return;
+    f.set("source", "website");
+    // no-cors: the sheet only needs the row; the visitor shouldn't wait for (or be blocked by) the reply.
+    fetch(ENDPOINT, { method: "POST", mode: "no-cors", keepalive: true, body: new URLSearchParams(f) }).catch(() => {});
+    try { localStorage.setItem("cp-signed", "1"); } catch (e) {}
+    signed = true;
+    dlg.close();
+    setTimeout(() => { location.href = ZIP; }, 300);
+  });
+})();
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ClaudePace",
  "description":"macOS menu bar app that forecasts when your Claude Pro or Max session and weekly limits run out, with a daily budget and advice to make them last.",
