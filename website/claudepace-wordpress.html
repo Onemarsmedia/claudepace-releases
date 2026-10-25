@@ -153,6 +153,20 @@ details p { color: var(--muted); margin-top: 10px; max-width: 70ch; }
 footer { padding: 48px 0 64px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
 
+/* gallery */
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+.gallery figcaption { margin-top: 12px; color: var(--muted); font-size: 15px; }
+.gallery figcaption b { color: var(--ink); font-weight: 600; }
+.term { background: #0d0f14; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; aspect-ratio: 1400 / 964; }
+.term .bar { display: flex; gap: 7px; padding: 12px 14px; border-bottom: 1px solid #1d212b; }
+.term .bar i { width: 11px; height: 11px; border-radius: 50%; background: #2c313c; }
+.term .body { flex: 1; padding: 18px 20px; font-size: 13.5px; line-height: 1.7; color: #b8bfcc; display: flex; flex-direction: column; }
+.term .body .dim { color: #6b7280; }
+.term .status { margin-top: auto; padding-top: 12px; border-top: 1px solid #1d212b; }
+.term .g { color: #3ccf7e; } .term .a { color: #f5a524; }
+@media (max-width: 900px) { .gallery { grid-template-columns: 1fr; } .term { aspect-ratio: auto; min-height: 260px; } }
 @media (max-width: 900px) {
   section { padding: 72px 0; }
   .hero .wrap, .split { grid-template-columns: 1fr; gap: 44px; }
@@ -311,6 +325,41 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <p>Your limits and forecast at the bottom of every Claude Code session. One click to add, with a backup of your settings.</p>
         <div class="quote">S 5% · W 33% ≈90% by reset</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="screens" style="padding-top:0">
+  <div class="wrap">
+    <h2>See what you get.</h2>
+    <div class="gallery">
+      <figure>
+        <img src="https://onemarsmedia.com/wp-content/uploads/2026/10/claudepace-shot-history.png" width="1400" height="964" loading="lazy"
+             alt="ClaudePace History: weeks at the limit, average weekly peak and a 7-day usage chart.">
+        <figcaption><b>History.</b> How your weekly usage moved over the last day, week or month — stored only on your Mac.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://onemarsmedia.com/wp-content/uploads/2026/10/claudepace-shot-peaks.png" width="1400" height="964" loading="lazy"
+             alt="Weekly peak chart: the highest weekly usage reached before each reset, five weeks.">
+        <figcaption><b>Weekly peaks.</b> See how close you got to the limit each week, and how often you hit it.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://onemarsmedia.com/wp-content/uploads/2026/10/claudepace-shot-menubar.png" width="1400" height="964" loading="lazy"
+             alt="Menu Bar settings: live preview, four styles, and which limits to show.">
+        <figcaption><b>Your menu bar, your way.</b> Four styles, labels, remaining instead of used, pace tick and colours by forecast.</figcaption>
+      </figure>
+      <figure>
+        <div class="term mono" role="img" aria-label="A Claude Code session in Terminal with the ClaudePace status line at the bottom: S 6% · W 33% about 89% by reset.">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">
+            <span><span class="dim">&gt;</span> refactor the parser and add tests</span>
+            <span class="dim">● Reading Sources/ClaudePaceCore/Usage.swift</span>
+            <span class="dim">● Editing 2 files…</span>
+            <span class="status"><span class="g">S 6%</span><span class="dim"> · </span><span class="g">W 33%</span><span class="dim"> ≈89% by reset</span></span>
+          </div>
+        </div>
+        <figcaption><b>Claude Code status line.</b> Your limits under every session, in the terminal. One click to add, with a backup of your settings.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
