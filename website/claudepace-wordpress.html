@@ -3,6 +3,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+.cp-page, .cp-page h1, .cp-page h2, .cp-page h3, .cp-page p, .cp-page li, .cp-page a, .cp-page summary, .cp-page span {
+  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+}
+.cp-page h1, .cp-page h2, .cp-page h3 { line-height: 1.05; letter-spacing: -.025em; margin: 0; color: var(--ink); }
+.cp-page h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 700; }
+.cp-page h3 { font-size: 20px; font-weight: 600; letter-spacing: -.01em; }
+.cp-page p { margin: 0; }
+.cp-page a:not(.btn-primary) { color: inherit; }
+.cp-page a.btn-primary { color: var(--on-lime); }
+.cp-page .mono, .cp-page code, .cp-page .mono span { font-family: "JetBrains Mono", ui-monospace, monospace; }
+.cp-page { background: var(--bg); color: var(--ink); font-size: 17px; line-height: 1.55; }
+
 :root {
   --bg: #f5f6f2; --surface: #ffffff; --surface-2: #eceee8; --ink: #12141a; --muted: #5a606c;
   --line: #dfe2da; --lime: #c6f432; --lime-ink: #3e5600; --on-lime: #12160a;
